@@ -31,7 +31,7 @@ public class CancionDao extends BaseDao { // TODO: heredar de BaseDao
             e.printStackTrace();
         }
 
-        return new ArrayList<>();
+        return canciones;
     }
 
     /**
@@ -49,13 +49,13 @@ public class CancionDao extends BaseDao { // TODO: heredar de BaseDao
 
             if (rs.next()) {
                 Cancion cancion = new Cancion(rs.getInt("idCancion"), rs.getString("titulo"), rs.getString("artista"), rs.getInt("duracionSeg"), rs.getInt("anio"), rs.getInt("idGenero"));
-                return cancion;
+                return cancion; // aqui ya devolvemos la canción como tal
             }
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return null;
+        return null; // devolvemos null si no existe ninguna canción con ese id
     }
 
     /**
