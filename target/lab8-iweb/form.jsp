@@ -9,11 +9,19 @@
 <body>
 <%-- TODO: título distinto para crear y para editar --%>
 <h1>Canción</h1>
+<h1>Crear o editar</h1>
 
 <%-- TODO: mostrar aquí el mensaje de error de validación (si existe) --%>
+<h1>Mensaje de error</h1>
 
 <form method="post" action="canciones">
     <%-- TODO: campos ocultos action (crear o actualizar) e id (solo al editar) --%>
+
+    <form method="post" action="canciones">
+
+        <input type="hidden" name="action" value="crear">
+        <input type="hidden" name="id" value="0">
+    </form>
 
     <label>Título:</label>
     <input type="text" name="titulo"><br>
@@ -30,9 +38,15 @@
     <label for="idgenero">Género:</label>
     <select name="idgenero" id="idgenero">
         <%-- TODO: una opción por cada género; al editar, el género actual debe quedar seleccionado --%>
+        <option value="1">Rock</option>
+        <option value="2">Pop</option>
+        <option value="3">Electro</option>
+        <option value="4">Rap</option>
+
     </select><br>
 
     <%-- TODO: al editar o al fallar la validación, los campos deben mostrar los valores actuales --%>
+
 
     <button type="submit">Guardar</button>
     <a href="canciones">Cancelar</a>
